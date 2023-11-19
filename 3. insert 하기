@@ -1,0 +1,54 @@
+package ex1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+
+public class Program2 {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		int id = 4;
+		String title = "TEST2";
+		String writerid = "new";
+		String content = "hahaha";
+		String files = "";
+		
+		
+		String url = "jdbc:oracle:thin:@localhost:1521/xe";
+		String sql = "INSERT INTO notice (" + 
+				"	 id,   " +
+				"    title," + 
+				"    writer_id," + 
+				"    content," + 
+				"    files" + 
+				") VALUES (?, ? ,?, ?, ?)";
+				
+				
+				
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection(url, "sys as sysdba", "7047");
+		
+		//Statement st = con.createStatement();
+		PreparedStatement st = con.prepareStatement(sql);
+		// 각각의 자료형마다 세팅메소드가 다르다.
+		st.setInt(1, id);
+		st.setString(2, title);
+		st.setString(3, writerid);
+		st.setString(4, content);
+		st.setString(5, files);
+		
+		int result = st.executeUpdate(); // 반영된 레코드의 건수 반환 이 경우에는 1 반환해야 한다.
+		
+		System.out.println(result);
+		
+		st.close();
+		con.close();
+
+	}
+
+}
