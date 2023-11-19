@@ -1,0 +1,47 @@
+package ex1;
+
+import java.sql.SQLException;
+
+import com.newlecture.app.console.NoticeConsole;
+
+public class Program5 {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		NoticeConsole console = new NoticeConsole();
+		console.printNoticeList();
+		int menu = console.inputNoticeMenu();
+		
+		switch(menu) {
+		case 1: // 상세 조회
+			break;
+		case 2: // 이전
+			break;
+		case 3: // 다음
+			break;
+		case 4: // 글쓰기
+			break;
+			
+		}
+	}
+
+}
+
+/*
+-----------------------------------------
+<공지사항> 총 12 게시글
+-----------------------------------------
+4. JDBC4란 무엇인가? / newlec / 2023-11-19
+5. JDBC5란 무엇인가? / newlec / 2023-11-19
+6. JDBC6란 무엇인가? / newlec / 2023-11-19
+1. JDBC란 무엇인가? / newlec / 2023-11-19
+2. JDBC2란 무엇인가? / newlec / 2023-11-19
+3. JDBC3란 무엇인가? / newlec / 2023-11-19
+7. JDBC7란 무엇인가? / newlec / 2023-11-19
+8. JDBC8란 무엇인가? / newlec / 2023-11-19
+9. JDBC9란 무엇인가? / newlec / 2023-11-19
+10. JDBC10란 무엇인가? / newlec / 2023-11-19
+11. JDBC11란 무엇인가? / newlec / 2023-11-19
+12. JDBC12란 무엇인가? / newlec / 2023-11-19
+-----------------------------------------
+        1/2 pages
+*/
